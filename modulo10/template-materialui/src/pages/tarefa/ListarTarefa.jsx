@@ -87,7 +87,7 @@ const ListarTarefa = () => {
         <CardHeader
           title="Tarefas"
           subheader="Listagem de Tarefas"
-        /> 
+        />
         <CardContent>
             <TableContainer component={Paper}>
             <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
@@ -122,10 +122,10 @@ const ListarTarefa = () => {
                       <TableCell align="right">{row.statusTarefa}</TableCell>
                       <TableCell align="right">{row.recursoTarefa}</TableCell>
                       <TableCell align="center">
-                        <Button variant="contained" color="success" onClick={() => handleEditar(row.idTarefa)}><EditIcon fontSize="small" /></Button>            
+                        <Button variant="contained" color="success" onClick={() => handleEditar(row.idTarefa)}><EditIcon fontSize="small" /></Button>
                       </TableCell>
                       <TableCell align="center">
-                        <Button variant="contained" color="error" onClick={() => handleDeletar(row.idTarefa)}><DeleteIcon fontSize="small" /></Button>            
+                        <Button variant="contained" color="error" onClick={() => handleDeletar(row.idTarefa)}><DeleteIcon fontSize="small" /></Button>
                       </TableCell>
                     </TableRow>
                 ))}
@@ -136,7 +136,8 @@ const ListarTarefa = () => {
         <CardActions>
             <Button size="small" variant="contained" onClick={handleOpen}>Criar Tarefa</Button>
             <Button size="small" variant="outlined">Cancelar</Button>
-      </CardActions> 
+        </CardActions>
+        <span>Total de tarefas: {tarefas.length}</span>
     </Card>
     <div>
       <Modal
@@ -148,7 +149,7 @@ const ListarTarefa = () => {
         <div>
           <CriarTarefa handleClose={handleClose} tarefas={tarefas} setTarefas={setTarefas} />
         </div>
-      </Modal>  
+      </Modal>
     </div>
     <div>
       <Modal
@@ -160,10 +161,10 @@ const ListarTarefa = () => {
         <div>
           <EditarTarefa handleCloseEditar={handleCloseEditar} idTarefaSelecionada={idTarefaSelecionada} tarefas={tarefas} tarefa={tarefa} setTarefas={setTarefas} />
         </div>
-      </Modal>  
+      </Modal>
     </div>
-  </>    
+  </>
  );
 };
- 
+
 export default ListarTarefa;
